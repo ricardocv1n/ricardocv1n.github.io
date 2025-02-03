@@ -1,21 +1,21 @@
-let anniversary = "2024-07-15";
+let anniversary = "2025-02-03";
 let anniversaryDate = new Date(anniversary);
 let today = new Date();
 
-// Función para calcular la diferencia en años, meses y días
+// FunciÃ³n para calcular la diferencia en aÃ±os, meses y dÃ­as
 function dateDiff(startDate, endDate) {
     let years = endDate.getFullYear() - startDate.getFullYear();
     let months = endDate.getMonth() - startDate.getMonth();
     let days = endDate.getDate() - startDate.getDate();
 
-    // Si los días son negativos, resta un mes y ajusta los días
+    // Si los dÃ­as son negativos, resta un mes y ajusta los dÃ­as
     if (days < 0) {
         months--;
         let lastDayOfPreviousMonth = new Date(endDate.getFullYear(), endDate.getMonth(), 0).getDate();
         days += lastDayOfPreviousMonth;
     }
 
-    // Si los meses son negativos, resta un año y ajusta los meses
+    // Si los meses son negativos, resta un aÃ±o y ajusta los meses
     if (months < 0) {
         years--;
         months += 12;
@@ -26,7 +26,7 @@ function dateDiff(startDate, endDate) {
 
 let diff = dateDiff(anniversaryDate, today);
 
-// Actualiza el contenido en la página con los resultados correctos
+// Actualiza el contenido en la pÃ¡gina con los resultados correctos
 document.getElementById("days").textContent = diff.days.toString();
 document.getElementById("months").textContent = diff.months.toString();
 document.getElementById("years").textContent = diff.years.toString();
